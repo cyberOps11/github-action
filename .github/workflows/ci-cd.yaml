@@ -22,6 +22,6 @@ jobs:
       - name: Run Linting
         uses: golangci/golangci-lint-action@v3
         with:
-          working-directory: golang_app
+          working-directory: ./golang_replacements/13-unnused-func.go
       - name: Run Tests
         run: go test
