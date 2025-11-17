@@ -18,7 +18,7 @@ jobs:
       - name: List Directory Contents Again
         run: ls -latr
       - name: Use GitHub Script Action
-        uses: actions/github-script@v6
+        uses: actions/github-script@v8
         with:
           script: |
             const create = await github.rest.issues.create({
