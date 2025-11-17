@@ -9,9 +9,7 @@ jobs:
   ci:
     name: Continuous Integration
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: golang_app
+
     steps:
       - name: Clone
         uses: actions/checkout@v4
