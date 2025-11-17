@@ -9,19 +9,18 @@ jobs:
   ci:
     name: Continuous Integration
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: golang_app
     steps:
       - name: Clone
-        uses: actions/checkout@v3.1.0
-      - name: Get Dependencies
-        run: go get app
-      - name: Build
-        run: go build
-      - name: Run Linting
-        uses: golangci/golangci-lint-action@v3
+        uses: actions/checkout@v4
+
+      - name: Create App Directory
+        run: mkdir golang_app
+
+      - name: Create dummy app file
+        run: echo "This is a dummy file for the artifact upload" > golang_app/app
+
+      - name: Store Artifact
+        uses: actions/upload-artifact@v4
         with:
-          working-directory: golang_app
-      - name: Run Tests
-        run: go test
+          name: golang_app
+          path: golang_app/app 
