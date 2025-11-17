@@ -17,6 +17,7 @@ jobs:
         uses: actions/checkout@v4
       - name: Create Go App Directory
         run: mkdir golang_app
+        working-directory: .
       - name: Get Dependencies
         run: go get app
       - name: Build
