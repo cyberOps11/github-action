@@ -14,7 +14,7 @@ jobs:
         working-directory: golang_app
     steps:
       - name: Clone
-        uses: actions/checkout@v3.1.0
+        uses: actions/checkout@v6
       - name: Get Dependencies
         run: go get app
       - name: Build
